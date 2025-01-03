@@ -1,3 +1,19 @@
+/* Antic Didone */
+@font-face {
+  font-family: 'Antic Didone';
+  src: url('./Antic_Didone/AnticDidone-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Palette Mosaic */
+@font-face {
+  font-family: 'Palette Mosaic';
+  src: url('Palette_Mosaic/PaletteMosaic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Alegreya Sans */
 @font-face {
   font-family: 'Alegreya Sans';
@@ -25,14 +41,6 @@
   src: url('./Alegreya_Sans/AlegreyaSans-BlackItalic.ttf') format('truetype');
   font-weight: 900;
   font-style: italic;
-}
-
-/* Antic Didone */
-@font-face {
-  font-family: 'Antic Didone';
-  src: url('./Antic_Didone/AnticDidone-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
 }
 
 /* Poppins */
