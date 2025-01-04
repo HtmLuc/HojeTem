@@ -5,17 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      'primary': '#F5E6CC',
-      'secondary': '#D16B48',
-    },
     fontFamily: {
-        'palette-mosaic': ['Palette Mosaic'],
-        'antic-didone': ['Antic Didone'],
-        'alegreya Sans': ['Alegreya Sans'],
-        'poppins': ['Poppins'],
+      'palette-mosaic': ['Palette Mosaic'],
+      'antic-didone': ['Antic Didone'],
+      'alegreya Sans': ['Alegreya Sans'],
+      'poppins': ['Poppins'],
+      'modak': ['Modak'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#F5E6CC',
+        'secondary': '#D16B48',
+      },
+    },
   },
   plugins: [],
 }
