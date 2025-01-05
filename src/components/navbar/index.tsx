@@ -5,17 +5,13 @@ const Navbar = () => {
   const user = {
     name: 'Lucas Dantas',
     email: 'lucas@proton.me',
-    imageUrl:
-    'https://avatars.githubusercontent.com/u/51703909',
+    imageUrl: 'https://avatars.githubusercontent.com/u/51703909',
   }
   const userNavigation = [
     { name: 'Perfil', href: '/user/perfil' },
     { name: 'Seus eventos', href: 'user/eventos' },
     { name: 'Sair', href: '/logout' },
   ]
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
   return (
     <div className="bg-secondary">
       <Disclosure as="nav">
@@ -81,4 +77,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar
+export default Navbar;
