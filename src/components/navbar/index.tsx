@@ -13,13 +13,13 @@ const Navbar = () => {
     { name: 'Sair', href: '/logout' },
   ]
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary fixed w-full">
       <Disclosure as="nav">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <div className="shrink-0">
-                <a href="/" className="font-modak text-5xl">Hoje Tem</a>
+                <a href="/" className="font-modak text-5xl text-white">Hoje Tem</a>
               </div>
             </div>
             <div className="hidden md:block">
@@ -27,7 +27,7 @@ const Navbar = () => {
                 {/* Botão de notificacões (NÃO SEI SE ELE VAI FICAR AQUI) */}
                 <button
                   type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="relative rounded-full bg-white/30 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Mostrar notificações</span>

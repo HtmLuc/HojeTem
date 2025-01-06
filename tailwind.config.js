@@ -8,7 +8,7 @@ export default {
     fontFamily: {
       'palette-mosaic': ['Palette Mosaic'],
       'antic-didone': ['Antic Didone'],
-      'alegreya Sans': ['Alegreya Sans'],
+      'alegreya-sans': ['Alegreya Sans'],
       'poppins': ['Poppins'],
       'modak': ['Modak'],
     },
@@ -16,6 +16,7 @@ export default {
       colors: {
         'primary': '#F5E6CC',
         'secondary': '#D16B48',
+        'tertiary': '#343232',        
       },
     },
   },
