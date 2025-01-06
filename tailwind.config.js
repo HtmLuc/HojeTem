@@ -8,7 +8,7 @@ export default {
     fontFamily: {
       'palette-mosaic': ['Palette Mosaic'],
       'antic-didone': ['Antic Didone'],
-      'alegreya Sans': ['Alegreya Sans'],
+      'alegreya-sans': ['Alegreya Sans'],
       'poppins': ['Poppins'],
       'modak': ['Modak'],
     },
