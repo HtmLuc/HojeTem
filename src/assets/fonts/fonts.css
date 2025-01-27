@@ -1,96 +1,96 @@
 /* Antic Didone */
 @font-face {
-  font-family: 'Antic Didone';
-  src: url('./Antic_Didone/AnticDidone-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Antic Didone';
+    src: url('./Antic_Didone/AnticDidone-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Palette Mosaic */
 @font-face {
-  font-family: 'Modak';
-  src: url('Modak/Modak-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Modak';
+    src: url('Modak/Modak-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Palette Mosaic */
 @font-face {
-  font-family: 'Palette Mosaic';
-  src: url('Palette_Mosaic/PaletteMosaic-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Palette Mosaic';
+    src: url('Palette_Mosaic/PaletteMosaic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Alegreya Sans */
 @font-face {
-  font-family: 'Alegreya Sans';
-  src: url('./Alegreya_Sans/AlegreyaSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Alegreya Sans';
+    src: url('./Alegreya_Sans/AlegreyaSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Alegreya Sans';
-  src: url('./Alegreya_Sans/AlegreyaSans-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
+    font-family: 'Alegreya Sans';
+    src: url('./Alegreya_Sans/AlegreyaSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Alegreya Sans';
-  src: url('./Alegreya_Sans/AlegreyaSans-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+    font-family: 'Alegreya Sans';
+    src: url('./Alegreya_Sans/AlegreyaSans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Alegreya Sans';
-  src: url('./Alegreya_Sans/AlegreyaSans-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
+    font-family: 'Alegreya Sans';
+    src: url('./Alegreya_Sans/AlegreyaSans-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
 }
 
 /* Poppins */
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins/Poppins-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins/Poppins-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins/Poppins-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins/Poppins-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins/Poppins-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins/Poppins-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
 }
