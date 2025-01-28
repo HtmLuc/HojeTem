@@ -1,15 +1,15 @@
-import { MapPinIcon } from '@heroicons/react/24/outline'
 import { useState } from "react"
+import { MapPinIcon } from '@heroicons/react/24/outline'
 import PopupEventos from '../popupEventos'
 
 const EventosDestaque = ({title, description, local, data, horario, imageAlt, imageUrl}) => {
     const [isOpen, setIsOpen] = useState(false);
-
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
+
     return (
     <>
-        <div className="pl-6" onClick={ openModal }>
+        <div className="pl-6 cursor-pointer" onClick={ openModal }>
             <div className="relative w-80 h-80">
                 <MapPinIcon
                     aria-hidden="true"

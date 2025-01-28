@@ -1,32 +1,15 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {GoogleMap, useJsApiLoader, Marker} from '@react-google-maps/api'
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import Navbar from './../components/navbar';
 import EventosDestaque from '../components/eventosDestaque';
+import ListaEventos from "../components/listaEventos";
 
 const Home = () => {
-    const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
-
     const {isLoaded} = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: 'AIzaSyAtO43hBop6SXQf6eyFONTo9QB7UQ2nlxc'
-    })
-
-    const getCoordenadas = async (address) => {
-        const response = await fetch(
-            `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-                address
-            )}&key=AIzaSyAtO43hBop6SXQf6eyFONTo9QB7UQ2nlxc`
-        );
-
-        const data = await response.json();
-        if (data.results.length > 0) {
-            const {lat, lng} = data.results[0].geometry.location;
-            setPosition({lat, lng});
-        } else {
-            console.error("Endereço não encontrado.");
-        }
-    };
+    });
 
     const navegacao = [
         {
@@ -48,6 +31,7 @@ const Home = () => {
 
     const infosEventos = [
         {
+            pago: false,
             title: 'Por do Sol mais bonitos do estado',
             description: 'Veja quais são os melhores lugares para ver o por do sol no RN.',
             local: 'Praia da Redinha',
@@ -57,6 +41,7 @@ const Home = () => {
             imageUrl: '/images/eventoDestaque-1.png'
         },
         {
+            pago: true,
             title: 'Numanice 3',
             description: '“Saudade da gente, ôôô (…) Quem dera se fosse menos KM…”E seu desejo é uma ORDEM. Chegaram as datas da #Numanice3Tour! Prontos pra fazermos história, mais uma vez, e curtir de perto as canetadas da Lud?',
             local: 'Arena das dunas',
@@ -66,6 +51,7 @@ const Home = () => {
             imageUrl: '/images/eventoDestaque-2.png'
         },
         {
+            pago: false,
             title: 'Árvore de Mirassol (Evento Gratuito)',
             description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
             local: 'Av. das Tulípas, S/N - Capim Macio, Natal - RN',
@@ -75,6 +61,7 @@ const Home = () => {
             imageUrl: '/images/eventoDestaque-3.png'
         },
         {
+            pago: false,
             title: 'Árvore de Mirassol (Evento Gratuito)',
             description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
             local: 'Av. das Tulípas, S/N - Capim Macio, Natal - RN',
@@ -84,6 +71,7 @@ const Home = () => {
             imageUrl: '/images/eventoDestaque-3.png'
         },
         {
+            pago: false,
             title: 'Árvore de Mirassol (Evento Gratuito)',
             description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
             local: 'Av. das Tulípas, S/N - Capim Macio, Natal - RN',
@@ -170,10 +158,11 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section id="mapa" className="p-3 bg-tertiary h-screen">
-                    <div className="w-1/2 bg-secondary rounded-md">
+                <section id="mapa" className="p-3 bg-tertiary h-screen flex">
+                    <div className="flex flex-col justify-center items-center w-1/2 bg-secondary/90 rounded-l-md">
                         {infosEventos.slice(0, 4).map((item) =>
-                            <EventosDestaque
+                            <ListaEventos
+                                pago={item.pago}
                                 title={item.title}
                                 description={item.description}
                                 local={item.local}
@@ -185,40 +174,24 @@ const Home = () => {
                         )}
                     </div>
                     <div className="w-1/2 h-full">
-                        {
-                            isLoaded ? (
-                                <GoogleMap
-                                    mapContainerStyle={{width: '100%', height: '100%'}}
-                                    center={position || {
-                                        lat: -5.8267096177215505,
-                                        lng: -35.212453011281426
-                                    }}
-                                    zoom={13}
-                                    mapContainerClassName="rounded-md"
-                                >
-                                    {position &&
-                                        <Marker
-                                            position={position}
-                                            options={{
-                                                icon: {
-                                                    path: google.maps.SymbolPath.CIRCLE,
-                                                    scale: 10,
-                                                    fillColor: "blue",
-                                                    fillOpacity: 1,
-                                                    strokeWeight: 2,
-                                                    strokeColor: "white",
-                                                },
-                                                label: "",
-                                                className: ""
-                                            }}
-                                        />
-                                    }
-                                    <></>
-                                </GoogleMap>
-                            ) : (
-                                <></>
-                            )
-                        }
+                        {isLoaded && (
+                            <GoogleMap
+                                mapContainerStyle={{width: '100%', height: '100%'}}
+                                center={{lat: -5.8267096177215505, lng: -35.212453011281426}}
+                                zoom={13}
+                                mapContainerClassName="rounded-r-md"
+                            >
+                                    <Marker
+                                        position = {{ lat: -5.82680746912258, lng: -35.21239262958796 }}
+                                        options = {{
+                                            label: {
+                                                text: 'Numanice',
+                                                color: 'black',
+                                            },
+                                        }}
+                                    />
+                            </GoogleMap>
+                        )}
                     </div>
                 </section>
             </main>
