@@ -1,13 +1,15 @@
+import {useState, useEffect} from "react";
 import {GoogleMap, useJsApiLoader, Marker} from '@react-google-maps/api'
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import Navbar from './../components/navbar';
 import EventosDestaque from '../components/eventosDestaque';
+import ListaEventos from "../components/listaEventos";
 
 const Home = () => {
     const {isLoaded} = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'AIzaSyCRxydfRjyOnyhZAz7oiZvcY1ShrEYb19M',
-    })
+        googleMapsApiKey: 'AIzaSyAtO43hBop6SXQf6eyFONTo9QB7UQ2nlxc'
+    });
 
     const navegacao = [
         {
@@ -27,8 +29,9 @@ const Home = () => {
         },
     ];
 
-    const infosEventosDestaque = [
+    const infosEventos = [
         {
+            pago: false,
             title: 'Por do Sol mais bonitos do estado',
             description: 'Veja quais são os melhores lugares para ver o por do sol no RN.',
             local: 'Praia da Redinha',
@@ -38,6 +41,7 @@ const Home = () => {
             imageUrl: '/images/eventoDestaque-1.png'
         },
         {
+            pago: true,
             title: 'Numanice 3',
             description: '“Saudade da gente, ôôô (…) Quem dera se fosse menos KM…”E seu desejo é uma ORDEM. Chegaram as datas da #Numanice3Tour! Prontos pra fazermos história, mais uma vez, e curtir de perto as canetadas da Lud?',
             local: 'Arena das dunas',
@@ -47,6 +51,27 @@ const Home = () => {
             imageUrl: '/images/eventoDestaque-2.png'
         },
         {
+            pago: false,
+            title: 'Árvore de Mirassol (Evento Gratuito)',
+            description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
+            local: 'Av. das Tulípas, S/N - Capim Macio, Natal - RN',
+            data: '20 de novembro a 06 de janeiro',
+            horario: 'Todas as noites',
+            imageAlt: 'Árvore de Mirassol enfeitada com luzes de natal',
+            imageUrl: '/images/eventoDestaque-3.png'
+        },
+        {
+            pago: false,
+            title: 'Árvore de Mirassol (Evento Gratuito)',
+            description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
+            local: 'Av. das Tulípas, S/N - Capim Macio, Natal - RN',
+            data: '20 de novembro a 06 de janeiro',
+            horario: 'Todas as noites',
+            imageAlt: 'Árvore de Mirassol enfeitada com luzes de natal',
+            imageUrl: '/images/eventoDestaque-3.png'
+        },
+        {
+            pago: false,
             title: 'Árvore de Mirassol (Evento Gratuito)',
             description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
             local: 'Av. das Tulípas, S/N - Capim Macio, Natal - RN',
@@ -119,7 +144,7 @@ const Home = () => {
                             durante o mês!</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {infosEventosDestaque.slice(0, 3).map((item) =>
+                        {infosEventos.slice(0, 3).map((item) =>
                             <EventosDestaque
                                 title={item.title}
                                 description={item.description}
@@ -133,29 +158,40 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section id="mapa" className="p-3 bg-tertiary h-screen">
-                    <div className="w-1/2">
+                <section id="mapa" className="p-3 bg-tertiary h-screen flex">
+                    <div className="flex flex-col justify-center items-center w-1/2 bg-secondary/90 rounded-l-md">
+                        {infosEventos.slice(0, 4).map((item) =>
+                            <ListaEventos
+                                pago={item.pago}
+                                title={item.title}
+                                description={item.description}
+                                local={item.local}
+                                data={item.data}
+                                horario={item.horario}
+                                imageAlt={item.imageAlt}
+                                imageUrl={item.imageUrl}
+                            />
+                        )}
                     </div>
-                    <div className="w-1/2 h-1/2">
-                        {
-                            isLoaded ? (
-                                <GoogleMap
-                                    mapContainerStyle={{width: '100%', height: '100%'}}
-                                    center={{
-                                        lat: -5.8267096177215505,
-                                        lng: -35.212453011281426
-                                    }}
-                                    zoom={13}
-                                    mapContainerClassName="rounded-md"
-                                >
-                                    {/* Child components, such as markers, info windows, etc. */}
-                                    <></>
-                                </GoogleMap>
-                            ) : (
-                                <></>
-                            )
-
-                        }
+                    <div className="w-1/2 h-full">
+                        {isLoaded && (
+                            <GoogleMap
+                                mapContainerStyle={{width: '100%', height: '100%'}}
+                                center={{lat: -5.8267096177215505, lng: -35.212453011281426}}
+                                zoom={13}
+                                mapContainerClassName="rounded-r-md"
+                            >
+                                    <Marker
+                                        position = {{ lat: -5.82680746912258, lng: -35.21239262958796 }}
+                                        options = {{
+                                            label: {
+                                                text: 'Numanice',
+                                                color: 'black',
+                                            },
+                                        }}
+                                    />
+                            </GoogleMap>
+                        )}
                     </div>
                 </section>
             </main>
