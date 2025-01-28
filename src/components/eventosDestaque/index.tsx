@@ -1,15 +1,8 @@
-import {MapPinIcon} from '@heroicons/react/24/outline'
-import {useState} from "react"
+import { MapPinIcon } from '@heroicons/react/24/outline'
+import { useState } from "react"
 import PopupEventos from '../popupEventos'
 
-interface EventCardProps {
-    title: string;
-    description: string;
-    imageAlt: string;
-    imageUrl: string;
-}
-
-const EventosDestaque: React.FC<EventCardProps> = ({title, description, imageAlt, imageUrl}) => {
+const EventosDestaque = ({title, description, local, data, horario, imageAlt, imageUrl}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => setIsOpen(true);
@@ -35,7 +28,7 @@ const EventosDestaque: React.FC<EventCardProps> = ({title, description, imageAlt
         </div>
 
         {isOpen && (
-            <PopupEventos title={ title } description={ description } imageAlt={ imageAlt } imageUrl={ imageUrl } closeModal={ closeModal }/>
+            <PopupEventos title={ title } description={ description } local={ local } data={ data } horario={ horario } imageAlt={ imageAlt } imageUrl={ imageUrl } closeModal={ closeModal }/>
         )}
     </>
 )
