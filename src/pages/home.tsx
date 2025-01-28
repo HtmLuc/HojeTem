@@ -1,6 +1,6 @@
-import EventCardPopup from '../components/popUpEvento';
 import Navbar from './../components/navbar';
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
+import EventosDestaque from '../components/eventosDestaque';
 
 const Home = () => {
     const navegacao = [
@@ -17,9 +17,30 @@ const Home = () => {
         {
             imageUrl: '/images/headerImg-2.jpg',
             href: '#mapa',
-            descricao: 'Filtros Personalizados',
+            descricao: 'Filtros Personalizados'
         },
     ];
+
+    const infosEventosDestaque = [
+        {
+            title: 'Por do Sol mais bonitos do estado',
+            description: 'Veja quais são os melhores lugares para ver o por do sol no RN.',
+            imageAlt: 'Por do Sol mais bonitos do estado',
+            imageUrl: '/images/eventoDestaque-1.png'
+        },
+        {
+            title: 'Numanice 3',
+            description: '“Saudade da gente, ôôô (…) Quem dera se fosse menos KM…”E seu desejo é uma ORDEM. Chegaram as datas da #Numanice3Tour! Prontos pra fazermos história, mais uma vez, e curtir de perto as canetadas da Lud?',
+            imageAlt: 'Numanice 3',
+            imageUrl: '/images/eventoDestaque-2.png'
+        },
+        {
+            title: 'Árvore de Mirassol (Evento Gratuito)',
+            description: 'Durante todo o mês de Dezembro, a famosa árvore estará aberta para visita do público. Local com praça de alimentação, shows, artesanato e outras programações para curtir com sua família e amigos.',
+            imageAlt: 'Árvore de Mirassol enfeitada com luzes de natal',
+            imageUrl: '/images/eventoDestaque-3.png'
+        }
+    ]
 
     return (
         <>
@@ -75,25 +96,21 @@ const Home = () => {
                 </section>
 
                 <section id="eventos-destaque" className="bg-primary h-screen p-8">
-                    <h2 className="text-2xl font-bold text-white mb-6">
-                        Eventos em Destaque
-                    </h2>
+                    <div className="justify-items-center">
+                        <h2 className="font-alegreya-sans font-black text-2xl pb-2">
+                            Eventos em Destaque
+                        </h2>
+                        <p className="font-antic-didone text-3xl">Fique por dentro dos eventos mais falados da cidade durante o mês!</p>
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <EventCardPopup
-                            title="Show da Banda XYZ"
-                            description="Um show incrível com a banda XYZ no Teatro Municipal."
-                            imageUrl="/images/evento-1.jpg"
-                        />
-                        <EventCardPopup
-                            title="Por do Sol mais bonitos do estado"
-                            description="Veja quais são os melhores lugares para ver o por do sol no RN."
-                            imageUrl="/images/pordosol.png"
-                        />
-                        <EventCardPopup
-                            title="Numanice 3"
-                            description="Show da Lud chega a Natal e promete"
-                            imageUrl="/images/numanice.png"
-                        />
+                        {infosEventosDestaque.slice(0, 3).map((item) =>
+                            <EventosDestaque
+                                title={item.title}
+                                description={item.description}
+                                imageAlt={item.imageAlt}
+                                imageUrl={item.imageUrl}
+                            />
+                        )}
                     </div>
                 </section>
 
